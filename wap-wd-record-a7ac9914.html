@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简明指南 · 问鼎娱乐</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #f1f3f6;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1e1e2a;
+            padding: 2rem 1rem;
+        }
+
+        .wrap {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* hero */
+        .hero {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 2.8rem 2rem;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e6eaf0;
+            text-align: center;
+            margin-bottom: 2.4rem;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #14171c;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .sub {
+            font-size: 1.05rem;
+            color: #5c6672;
+            max-width: 500px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .hero .meta-note {
+            display: inline-block;
+            background: #eef0f4;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            color: #3b4450;
+        }
+
+        /* 卡片区 */
+        .card-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+            margin-bottom: 2.6rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 22px;
+            padding: 1.8rem 1.8rem 1.8rem 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02), 0 1px 0 #e9edf3;
+            border: 1px solid #e2e7ee;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04), 0 1px 0 #dce1e8;
+        }
+
+        .card h2 {
+            font-size: 1.2rem;
+            font-weight: 550;
+            margin-bottom: 0.75rem;
+            color: #1b222b;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .card p {
+            color: #334044;
+            margin-bottom: 0.4rem;
+            font-size: 0.98rem;
+        }
+
+        .card .small-hint {
+            font-size: 0.88rem;
+            color: #6b7684;
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid #eef0f3;
+        }
+
+        .badge-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 0.9rem;
+            margin-top: 0.8rem;
+        }
+
+        .badge-list span {
+            background: #f0f2f6;
+            padding: 0.2rem 0.9rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: #2b3743;
+            border: 1px solid #dfe4ea;
+        }
+
+        /* faq 摘要 */
+        .faq-summary {
+            background: #ffffff;
+            border-radius: 22px;
+            padding: 1.8rem 2rem;
+            border: 1px solid #e2e7ee;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+            margin-bottom: 2.4rem;
+        }
+
+        .faq-summary h3 {
+            font-size: 1.1rem;
+            font-weight: 550;
+            margin-bottom: 1rem;
+            color: #1b222b;
+        }
+
+        .faq-item {
+            padding: 0.7rem 0;
+            border-bottom: 1px solid #eceff3;
+        }
+
+        .faq-item:last-child {
+            border-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-item .q {
+            font-weight: 500;
+            color: #1d2a36;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item .a {
+            color: #495662;
+            font-size: 0.94rem;
+        }
+
+        /* 底部链接 */
+        .footer-note {
+            text-align: center;
+            padding: 1.8rem 0.5rem 0.8rem;
+            border-top: 1px solid #dde2e9;
+            color: #56626e;
+            font-size: 0.92rem;
+            line-height: 1.7;
+        }
+
+        .footer-note a {
+            color: #1d2f4a;
+            text-decoration: none;
+            border-bottom: 1px dotted #b5bfcc;
+            font-weight: 450;
+        }
+
+        .footer-note a:hover {
+            border-bottom: 1px solid #2c405a;
+            color: #0a1a2c;
+        }
+
+        .foot-links {
+            margin-top: 0.8rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.6rem 1.4rem;
+            font-size: 0.86rem;
+        }
+
+        .foot-links span {
+            color: #626f7d;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e0e4ea;
+            margin: 1.2rem 0 0.8rem;
+        }
+
+        @media (max-width: 480px) {
+            body { padding: 1.2rem 0.8rem; }
+            .hero { padding: 2rem 1.2rem; }
+            .hero h1 { font-size: 1.8rem; }
+            .card { padding: 1.4rem; }
+            .faq-summary { padding: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+
+    <!-- hero -->
+    <div class="hero">
+        <h1>问鼎 · 简明指南</h1>
+        <div class="sub">关于访问方式、环境与常见疑问的备忘</div>
+        <div class="meta-note">最近更新 · 2025</div>
+    </div>
+
+    <!-- 卡片区：优势 + 说明 -->
+    <div class="card-grid">
+
+        <div class="card">
+            <h2>▎访问提醒</h2>
+            <p>部分网络环境下，域名解析可能出现延迟。建议优先使用稳定的宽带或移动网络，避免公共 Wi‑Fi 频繁切换。</p>
+            <p>如果遇到连接超时，稍后重试通常可以恢复。你也可以将页面添加至浏览器书签，方便日后直接进入。</p>
+            <div class="small-hint">提示：不要使用来源不明的第三方工具解析地址。</div>
+        </div>
+
+        <div class="card">
+            <h2>▎平台特点</h2>
+            <p>内容类型覆盖较广，界面偏向简洁直接，不需要复杂的个人设置即可浏览主要版块。</p>
+            <p>站内导航以分类入口为主，新用户花几分钟熟悉布局后，日常使用比较顺手。</p>
+            <div class="badge-list">
+                <span>分类清晰</span>
+                <span>加载较快</span>
+                <span>适配移动端</span>
+                <span>无强制注册</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>▎使用场景参考</h2>
+            <p>不管是午间休息、通勤途中，还是晚间放松，打开浏览器即可浏览。页面结构不复杂，适合碎片时间快速浏览。</p>
+            <p>部分内容可能需要较新版本的浏览器才能完整显示，建议保持浏览器为常用版本。</p>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-summary">
+        <h3>▎常见疑问 · 摘要</h3>
+        <div class="faq-item">
+            <div class="q">▪ 是否需要安装 App 或插件？</div>
+            <div class="a">不需要，直接用浏览器打开 <a href="https://wap-wd.com" style="border-bottom:1px dotted #b5bfcc; text-decoration:none; color:#1d2f4a;">问鼎娱乐</a> 即可，也无需注册。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">▪ 页面加载缓慢怎么办？</div>
+            <div class="a">先检查网络连接，尝试刷新或更换网络。部分时段访问量较大，属正常情况。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">▪ 移动端和电脑端体验有区别吗？</div>
+            <div class="a">移动端适配良好，字体和按钮会自适应。电脑端浏览信息密度稍高，看个人习惯。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">▪ 链接失效或跳转异常？</div>
+            <div class="a">直接输入主域名访问，避免使用镜像站或非官方导航页。</div>
+        </div>
+    </div>
+
+    <!-- 底部链接 -->
+    <div class="footer-note">
+        <p>本页仅做功能介绍与访问提示，更多信息可浏览 <a href="https://wap-wd.com">问鼎娱乐</a> 站点内说明。</p>
+        <div class="foot-links">
+            <span>© 参考指南</span>
+            <span>·</span>
+            <span>非官方页面</span>
+            <span>·</span>
+            <span>仅做介绍</span>
+        </div>
+        <hr>
+        <p style="font-size:0.82rem; color:#7a8696;">基于公开信息整理 · 内容仅供参考</p>
+    </div>
+</div>
+</body>
+</html>
