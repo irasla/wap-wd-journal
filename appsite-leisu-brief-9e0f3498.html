@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>雷速·轻量导航 | 场景化服务说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f5f5f0;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: #222;
+    }
+
+    a {
+      color: #9b6b43;
+      text-decoration: none;
+      border-bottom: 1px solid #dccfc0;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    a:hover {
+      color: #7a4f2e;
+      border-bottom-color: #7a4f2e;
+    }
+
+    /* 顶部导航 */
+    .top-nav {
+      background-color: #1e1e1c;
+      color: #e0ddd5;
+      padding: 0.8rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .top-nav .brand {
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      font-size: 1.1rem;
+    }
+
+    .top-nav .brand span {
+      color: #cdaa7b;
+    }
+
+    .top-nav .tagline {
+      font-size: 0.85rem;
+      color: #a09888;
+      letter-spacing: 0.02em;
+    }
+
+    /* 深色主视觉区 */
+    .hero {
+      background: #2b2b28;
+      color: #eae7df;
+      padding: 4rem 2rem 3.5rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: #dbb48b;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto 1.6rem;
+      font-size: 1rem;
+      color: #c5beb0;
+    }
+
+    .hero .hero-link-wrap {
+      display: inline-block;
+      margin-top: 0.8rem;
+    }
+
+    .hero a {
+      color: #f0e4d4;
+      border-bottom: 1px solid #b3977a;
+      font-weight: 450;
+    }
+
+    .hero a:hover {
+      color: #fff1e0;
+      border-bottom-color: #dbb48b;
+    }
+
+    /* 正文浅色区 */
+    .main-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 3rem;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      margin: 2rem 0 0.8rem;
+      padding-bottom: 0.25rem;
+      border-bottom: 1px solid #d9d0c0;
+      color: #3e3d38;
+    }
+
+    .section-title:first-of-type {
+      margin-top: 0;
+    }
+
+    .intro-text {
+      margin-bottom: 1.2rem;
+      color: #3a3935;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.8rem;
+      margin: 1.8rem 0 0.5rem;
+    }
+
+    .scene-card {
+      background: #ffffff;
+      border-radius: 0px;
+      padding: 1.6rem 1.2rem 1.4rem;
+      border: 1px solid #ded9ce;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+      transition: box-shadow 0.2s;
+    }
+
+    .scene-card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .scene-card h3 {
+      font-weight: 500;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.01em;
+      color: #4e4a42;
+    }
+
+    .scene-card p {
+      font-size: 0.92rem;
+      color: #56534b;
+      margin-bottom: 0.3rem;
+    }
+
+    .scene-card .tag {
+      display: inline-block;
+      background: #eae4d8;
+      color: #5c554a;
+      font-size: 0.7rem;
+      padding: 0.15rem 0.7rem;
+      margin-top: 0.6rem;
+      letter-spacing: 0.04em;
+    }
+
+    .faq-summary {
+      background: #f1ede5;
+      padding: 1.5rem 1.8rem;
+      margin: 2rem 0 1.5rem;
+      border-left: 3px solid #b3977a;
+    }
+
+    .faq-summary dt {
+      font-weight: 480;
+      margin-top: 0.8rem;
+      color: #2d2b27;
+    }
+
+    .faq-summary dt:first-child {
+      margin-top: 0;
+    }
+
+    .faq-summary dd {
+      margin-left: 0.8rem;
+      font-size: 0.92rem;
+      color: #56534b;
+    }
+
+    .note-line {
+      font-size: 0.88rem;
+      color: #7a7366;
+      margin-top: 1.8rem;
+      border-top: 1px solid #d9d0c0;
+      padding-top: 1.2rem;
+    }
+
+    .note-line a {
+      color: #7f623f;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      .top-nav {
+        padding: 0.6rem 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+      }
+      .hero {
+        padding: 3rem 1.2rem 2.5rem;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .main-content {
+        padding: 1.8rem 1rem 2rem;
+      }
+      .card-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+      .faq-summary {
+        padding: 1rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <header class="top-nav">
+    <div class="brand"><span>◈</span> 雷速 · 场景导航</div>
+    <div class="tagline">主题内容 · 轻量指引</div>
+  </header>
+
+  <!-- 深色主视觉 -->
+  <section class="hero">
+    <h1>从关键词到 <em>场景</em>，一点即达</h1>
+    <p>
+      无论是日常信息整理，还是特定主题的快速查找，<a href="https://appsite-leisu.com">雷速</a> 提供的是一份轻量、克制的入口参考。  
+      没有过度承诺，只有清晰的结构与真实的指向。
+    </p>
+    <div class="hero-link-wrap">
+      <span>→ 了解主题背后的内容逻辑</span>
+    </div>
+  </section>
+
+  <!-- 正文浅色区 -->
+  <div class="main-content">
+
+    <!-- 核心介绍段落 -->
+    <h2 class="section-title">从内容主题出发</h2>
+    <p class="intro-text">
+      我们围绕关键词背后的实际需求来组织信息，而不是堆叠空洞的标签。  
+      每个模块都对应一类常见的使用场景——你可能是想快速定位某个概念，或者梳理某个方向的资料。  
+      <a href="https://appsite-leisu.com">雷速</a> 的页面定位就是充当一个安静的路牌：告诉你前面有什么，然后由你决定是否过去。
+    </p>
+
+    <h2 class="section-title">三个常用场景模块</h2>
+    <div class="card-grid">
+      <div class="scene-card">
+        <h3>📎 信息归纳</h3>
+        <p>当需要把零散的主题点整理成可浏览的框架，场景卡片可以帮你快速建立结构感，避免陷入细节。</p>
+        <span class="tag">适用：内容归档 / 初步梳理</span>
+      </div>
+      <div class="scene-card">
+        <h3>🔍 快速定位</h3>
+        <p>在比较分散的材料中，通过场景分类能更快找到你关心的那部分，而不必从头到尾通读。</p>
+        <span class="tag">适用：检索 / 资料筛选</span>
+      </div>
+      <div class="scene-card">
+        <h3>🧩 轻量参考</h3>
+        <p>不需要长篇大论，只需要一个可用的索引。每个场景卡片都指向更具体的说明或链接，方便你按需深入。</p>
+        <span class="tag">适用：日常查阅 / 简要指引</span>
+      </div>
+    </div>
+
+    <!-- 常见说明 / FAQ 摘要 -->
+    <h2 class="section-title">常见说明</h2>
+    <dl class="faq-summary">
+      <dt>这个页面的内容会频繁更新吗？</dt>
+      <dd>以稳定为主。场景结构保持相对固定，如有优化会体现在模块描述的细节上，而非大改框架。</dd>
+
+      <dt>每个场景卡片背后对应什么？</dt>
+      <dd>卡片对应一类使用意图，而非具体功能。你可以把每个卡片看作一个思考方向，点击链接可以进一步了解该方向下的内容组织形式。</dd>
+
+      <dt>我该如何使用这里的链接？</dt>
+      <dd>所有外链都会清晰标明指向。例如 <a href="https://appsite-leisu.com">雷速</a> 就是一个直接可用的参考入口，按需访问即可。</dd>
+    </dl>
+
+    <!-- 提示 / 补充说明 -->
+    <p class="note-line">
+      本页面仅作介绍与导航用途，所有内容基于真实场景梳理，不包含诱导性描述或夸大效果。  
+      <br>如有具体疑问，建议直接访问 <a href="https://appsite-leisu.com">雷速</a> 获取第一手资料。
+    </p>
+
+  </div>
+</body>
+</html>
